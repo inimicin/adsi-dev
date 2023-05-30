@@ -1,5 +1,8 @@
 <?php
 include('../script/promo.php');
+include('../script/session.php');
+
+check_admin_session();
 ?>
 
 <!DOCTYPE html>

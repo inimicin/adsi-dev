@@ -7,7 +7,7 @@ class Header extends HTMLElement {
       this.innerHTML = `
           <nav
               class="navbar navbar-expand-lg navbar-light"
-              style="background-color: transparent; height: 60px; position: absolute;"
+              style="background-color: transparent; height: 60px; position: absolute;padding: .5rem 1rem !important;"
               >
               <button
                   class="navbar-toggler"
@@ -30,7 +30,7 @@ class Header extends HTMLElement {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="./Beranda.html">Beranda</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="./admin_beranda.php">Beranda</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="./admin_produk_data.php">Produk</a>
@@ -40,6 +40,9 @@ class Header extends HTMLElement {
                       </li>
                       <li class="nav-item">
                           <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./register.html">Kontak</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./logout.php">Logout</a>
                       </li>
                   </ul>
               </div>

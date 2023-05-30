@@ -1,6 +1,9 @@
 <?php
 include('../script/produk.php');
 include('../script/promo.php');
+include('../script/session.php');
+
+check_admin_session();
 
 if (isset($_POST['submit'])) {
     $status = save_data_produk($_POST['kategori'], $_POST['nama_produk'], $_POST['harga_produk'], $_POST['promo'], $_POST['stok']);

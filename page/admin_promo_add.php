@@ -1,6 +1,9 @@
 <?php
 include('../script/produk.php');
 include('../script/promo.php');
+include('../script/session.php');
+
+check_admin_session();
 
 if (isset($_POST['submit'])) {
     $status = save_data_promo($_POST['nama_promo'], $_POST['diskon']);

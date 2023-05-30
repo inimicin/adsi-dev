@@ -1,6 +1,9 @@
 <?php
 include('../script/produk.php');
 include('../script/promo.php');
+include('../script/session.php');
+
+check_admin_session();
 
 $result = get_data_produk_by_id($_GET['id']);
 

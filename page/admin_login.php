@@ -1,3 +1,15 @@
+<?php
+include('../script/account.php');
+include('../script/session.php');
+
+if (isset($_POST['submit'])) {
+  if (auth($_POST['username'], $_POST['password'])) {
+    start_admin_session();
+    header('location: ./admin_beranda.php');
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,19 +50,19 @@
           left: 10%;
           transform: translate(0, -50%);
         ">
-      <form>
+      <form method="POST" action="./admin_login.php">
         <h2 class="mb-4">Masuk</h2>
         <div class="form-group">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username" aria-describedby="basic-addon1">
           </div>
         </div>
         <div class="form-group">
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" placeholder="Password" aria-label="Username" name="password" aria-describedby="basic-addon1">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-save">Submit</button>
+        <button type="submit" class="btn btn-primary btn-save" name="submit">Submit</button>
       </form>
     </div>
 
