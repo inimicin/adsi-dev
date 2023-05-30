@@ -15,6 +15,15 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    body {
+        min-height: 100vh;
+        background: #ffffff;  
+        background-image: radial-gradient( circle farthest-corner at 0.1% 0.1%,  rgb(255, 215, 215) 0%, rgb(255, 255, 255) 99.9% );
+        /* background-image: linear-gradient( to left, rgb(177, 213, 244)0.2%, rgb(255,255,255)90%); */
+    }
+  </style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,16 +34,16 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="../style/general.css">
     <link rel="stylesheet" href="../style/component.css">
     <link rel="stylesheet" href="../style/font.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/admin_beranda_add.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="../script/Header.js"></script>
     <script src="../script/utility.js"></script>
     <script src="https://kit.fontawesome.com/eff27b1688.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <main-header active="produk"></main-header>
+    <main-header active="beranda"></main-header>
     <div class="container-fluid w-100 p-0" style="margin-top: 100px !important;position: absolute;">
         <div class="container mx-auto px-5 mt-1" style="margin-bottom: 100px !important;">
             <ul class="p-0 position-relative">
