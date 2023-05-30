@@ -1,0 +1,16 @@
+input, textarea{
+    color: black !important;
+    background-color: transparent !important;
+    border-color: black;
+    outline: solid 1px black;
+}
+
+input:hover, textarea:hover {
+    background-color: transparent !important;
+    outline: solid 2px black;
+    outline-offset: -2px;
+}
+
+input:active, textarea:active {
+    border-color: black;
+}
