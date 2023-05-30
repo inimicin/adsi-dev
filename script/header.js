@@ -33,7 +33,7 @@ class Header extends HTMLElement {
                           <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="./Beranda.html">Beranda</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'rules' ? 'active' : ''}" href="./rules.html">Produk</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="./admin_produk_data.php">Produk</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link ${this.getAttribute('active') == 'rundown' ? 'active' : ''}" href="./rundown.html">Riwayat</a>
