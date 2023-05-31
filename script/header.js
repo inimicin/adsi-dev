@@ -42,7 +42,7 @@ class Header extends HTMLElement {
                           <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./register.html">Kontak</a>
                       </li>
                       <li class="nav-item" ${this.getAttribute('logged') == 'false' ? 'style="display: none;"' : ''}>
-                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./logout.php">Logout</a>
+                          <a class="nav-link" href="./logout.php">Logout</a>
                       </li>
                   </ul>
               </div>
