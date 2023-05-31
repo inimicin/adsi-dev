@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-  <main-header active="beranda"></main-header>
+  <main-header active="beranda" logged="false"></main-header>
   <div class="container-fluid main-body w-100" style="height: 100vh">
     <div class="container-fluid form-container px-5" style="
           width: 40%;
