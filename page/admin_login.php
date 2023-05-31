@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
           transform: translate(0, -50%);
         ">
       <form method="POST" action="./admin_login.php">
-        <h2 class="mb-4">Masuk</h2>
+        <h2 class="mb-4" style = "font-weight: bold">Masuk</h2>
         <div class="form-group">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username" aria-describedby="basic-addon1">
@@ -65,6 +65,12 @@ if (isset($_POST['submit'])) {
         </div>
         <button type="submit" class="btn btn-primary btn-save" name="submit">Submit</button>
       </form>
+    </div>
+
+    <div
+        class="container login-image"
+        style="width: 25%; height: 56.25%; position: absolute; right: 20%; top: 25%"
+      ></div>
     </div>
 </body>
 
