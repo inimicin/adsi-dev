@@ -8,6 +8,7 @@
 .btn-save{
     background-color: #48509B !important;
     border-width: 1px;
+    border-radius: 10%;
     width: 37%;
     height: 60%;
     position: relative;

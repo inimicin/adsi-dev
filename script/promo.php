@@ -10,7 +10,7 @@ function get_data_promo() {
 }
 
 function get_data_promo_by_id($id) {
-    $query = "SELECT * FROM `promoproduk` WHERE `idPromo`=$id;";
+    $query = "SELECT * FROM `promoproduk` WHERE `idpromo`=$id;";
     $sql = mysqli_query($GLOBALS['conn'], $query);
 
     return mysqli_fetch_row($sql);

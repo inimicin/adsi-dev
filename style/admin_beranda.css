@@ -6,6 +6,20 @@
 .card:hover{
     border-color: black;
     border-width: 2px;
-
 }
 
+.dropdown-toggle::after {
+    border: none !important;
+}
+
+.dropdown-menu {
+    background: transparent !important;
+    border-color: black !important;
+    border-width: 2px !important;
+    border-radius: 10% !important;
+    width: 186.89px;
+}
+
+.dropdown-item {
+    background: transparent !important;
+}

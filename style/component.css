@@ -1,0 +1,58 @@
+
+.card{
+    border-color: #235870;
+    border-radius: 10%;
+}
+
+.card:hover{
+    border-color: black;
+    border-width: 2px;
+
+}
+
+.login-image {
+    background-image: url("../res/login.png");
+    background-size: cover;
+    /* filter: brightness(70%); */
+  }
+  
+
+.btn-save{
+    background-color: #48509B !important;
+    border-width: 1px;
+    width: 37%;
+    height: 60%;
+    position: relative;
+    left: 63%;
+    margin-top: 2%;
+}
+
+input, textarea{
+    color: black !important;
+    background-color: transparent !important;
+    border-color: rgb(143, 139, 139) !important;
+    border-radius: 10px !important;
+    margin-top: 2%;
+}
+
+input:hover, textarea:hover {
+    background-color: transparent !important;
+    border-color: #48509B !important;
+}
+
+input:active, textarea:active {
+    background-color: transparent !important;
+    border-color: #48509B !important;
+}
+
+input:focus, textarea:focus{
+    border-color: #48509B !important;
+    box-shadow: 0 0 0 1px #48509B !important;
+}
+
+.btn btn-primary{
+    background-color: #48509B !important;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+}

@@ -1,0 +1,30 @@
+input, textarea, select{
+    color: black !important;
+    background-color: transparent !important;
+    border-color: rgb(143, 139, 139) !important;
+    border-radius: 10px !important;
+}
+
+input:hover, textarea:hover , select:hover{
+    background-color: transparent !important;
+    border-color: #48509B !important;
+}
+
+input:active, textarea:active, select:active{
+    background-color: transparent !important;
+    border-color: #48509B !important;
+}
+
+input:focus, textarea:focus, select:focus{
+    border-color: #48509B !important;
+    box-shadow: 0 0 0 1px #48509B !important;
+}
+
+.btn {
+    background-color: #48509B !important;
+    border-color: black;
+    border-width: 1px !important;
+    padding: 2px;
+    width: 100px;
+    margin-top: 5px;
+}

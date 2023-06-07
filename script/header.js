@@ -7,7 +7,7 @@ class Header extends HTMLElement {
       this.innerHTML = `
           <nav
               class="navbar navbar-expand-lg navbar-light"
-              style="background-color: transparent; height: 60px; position: absolute;padding: .5rem 1rem !important;"
+              style="background-color: transparent; height: 60px; position: absolute;padding: .4rem 2rem !important;"
               >
               <button
                   class="navbar-toggler"
@@ -33,13 +33,13 @@ class Header extends HTMLElement {
                           <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="./admin_beranda.php">Beranda</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="./admin_produk_data.php">Produk</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="#">Produk</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'rundown' ? 'active' : ''}" href="./rundown.html">Riwayat</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'rundown' ? 'active' : ''}" href="#">Riwayat</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./register.html">Kontak</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="#">Kontak</a>
                       </li>
                       <li class="nav-item" ${this.getAttribute('logged') == 'false' ? 'style="display: none;"' : ''}>
                           <a class="nav-link" href="./logout.php">Logout</a>

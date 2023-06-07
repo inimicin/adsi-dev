@@ -22,10 +22,9 @@ check_admin_session();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Produk | Admin</title>
+    <title>Kelola Produk | Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/general.css">
-    <link rel="stylesheet" href="../style/component.css">
     <link rel="stylesheet" href="../style/font.css">
     <link rel="stylesheet" href="../style/nav.css">
     <link rel="stylesheet" href="../style/admin_produk_data.css">
@@ -35,16 +34,16 @@ check_admin_session();
 </head>
 
 <body>
-    <main-header active="beranda"></main-header>
+    <main-header active=" "></main-header>
     <div class="container-fluid w-100 p-0" style="margin-top: 100px !important;position: absolute;">
         <div class="container mx-auto px-5 mt-1">
             <ul class="p-0 position-relative">
                 <li style="display: inline-block;">
-                    <h2 style="color: black;font-weight: bold;">Daftar Produk</h2>
+                    <h2 style="color: black;font-weight: bold;">Kelola Produk</h2>
                 </li>
                 <li class="position-absolute end-0" style="display: inline-block;">
                     <a href="./admin_produk_add.php">
-                        <button type="button" class="btn btn-success" style="font-size: 11pt !important;">+ Tambah</button>
+                        <button type="button" class="btn btn-success" style="font-size: 10pt !important;">Tambah</button>
                     </a>
                 </li>
             </ul>
@@ -56,7 +55,7 @@ check_admin_session();
                         <th scope="col">Harga</th>
                         <th scope="col">Promo</th>
                         <th scope="col">Stok</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col"> </th>
                     </tr>
                 </thead>
                 <tbody>
