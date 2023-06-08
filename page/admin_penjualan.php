@@ -61,7 +61,7 @@ $allProduk = get_data_produk();
                 <li style="display: inline-block;">
                     <div class="form-group">
                         <label for="inputJumlah" style="font-size:10pt">Jumlah</label>
-                        <input type="Number" class="form-control" id="inputJumlah" style="font-size:8pt">
+                        <input type="Number" class="form-control" id="inputJumlah" style="font-size:8pt" min="1" required>
                     </div>
                 </li>
                 <li style="display: inline-block;">
@@ -124,16 +124,15 @@ $allProduk = get_data_produk();
         }
 
         function addProduk() {
-            createCookie('id', $('#inputProduk option:selected'), "1");
-            const namaProduk = '<?php echo get_data_produk_by_id($_COOKIE['id'])[1]; ?>';
-            $('#tablePenjualan tr:last').after(`
-                <tr style="border: 1px solid;">
-                    <td scope="col" style="border:none;">${namaProduk}</td>
-                    <td scope="col" style="border:none;">a</td>
-                    <td scope="col" style="border:none;">a</td>
-                    <td scope="col" style="border:none;">a</td>
-                </tr>
-            `);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    $('#tablePenjualan tr:last').after(this.responseText);
+                };
+            };
+
+            xmlhttp.open("GET", "../script/produk_penjualan_list.php?id=" + $('#inputProduk option:selected').val() + "&jumlah=" + $('#inputJumlah').val(), true);
+            xmlhttp.send();
         }
     </script>
 </body>
