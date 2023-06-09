@@ -61,7 +61,6 @@ include("./modal.php");
   <title>Beranda</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../style/general.css">
@@ -100,12 +99,12 @@ include("./modal.php");
     <div class="container home-image" style="width: 25%; height: 56.25%; position: absolute; right: 15%;"></div>
   </div>
 
-  <div class="" style="padding-bottom:20%; padding-left:50px;padding-right:50px;">
-  <center>
-    <h1 style="font-size: 30pt; padding-bottom: 100px;">
-      <strong>Produk </strong>
-    </h1>
-  </center>
+  <div class="" style="padding-top:100px;padding-bottom:20%; padding-left:50px;padding-right:50px;">
+    <center>
+      <h1 style="font-size: 30pt; padding-bottom: 100px;">
+        <strong>Produk </strong>
+      </h1>
+    </center>
 
     <table style=>
       <tr style="padding-left:10pt;padding-right:10pt;">
@@ -139,17 +138,24 @@ include("./modal.php");
     </table>
   </div>
 
-  
+  <div class="" style="padding-bottom:20%;">
+    <center>
+      <h1 style="font-size: 30pt;">
+        <strong>Kontak Kami</strong>
+      </h1>
+
+      <h1 style="font-size: 18pt;">
+        xxxxxx@xxxx.com
+      </h1>
+
+    </center>
+    <div class="container home-image" style="width: 15%; height: 30%;position:relative;margin-top:100px;"></div>
+
+  </div>
+
 
 
   <script src="../script/Header.js"></script>
-  <script>
-    function updateLink() {
-      $('.btn-next-menu').attr({
-        href: "konfirmasi_pembayaran.php?id=" + $('#produkList').val()
-      })
-    }
-  </script>
 </body>
 
 </html>

@@ -45,14 +45,17 @@
                     <strong>Riwayat Transaksi</strong>
                 </h1>
                 <div class="input-group mb-3" style="margin-top:20pt">
+
                     <input type="Number" class="form-control" placeholder="Masukan Nomor Telepon" id="nomorTelepon">
                     <button class="btn btn-outline-secondary btn-cari" type="button" id="Cari" onclick="updateTable()">Lihat Riwayat</button>
+
                 </div>
             </div>
         </div>
 
         <div class="table-riwayat">
             <table class="table border-primary mt-3" style="width:370%; border-color:black !important; background:transparent !important;">
+
                 <thead>
                     <tr>
                         <th scope="col">Tanggal</th>
@@ -67,6 +70,7 @@
         </div>
 
         <div class="container home-image" style="width: 25%; height: 56.25%; position: absolute; right: 15%;top:25%;"></div>
+
     </div>
     <script>
         function updateTable() {
@@ -82,3 +86,4 @@
         }
     </script>
 </body>
+
