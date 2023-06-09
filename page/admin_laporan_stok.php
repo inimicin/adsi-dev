@@ -2,6 +2,7 @@
 include('../script/produk.php');
 include('../script/promo.php');
 include('../script/session.php');
+include('../script/penjualan.php');
 
 check_admin_session();
 ?>
@@ -31,6 +32,7 @@ check_admin_session();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="../script/Header.js"></script>
     <script src="https://kit.fontawesome.com/eff27b1688.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -40,27 +42,25 @@ check_admin_session();
             <ul class="p-0 position-relative">
                 <li style="display: inline-block;">
                     <div class="input-group">
-                    <span style="color: black;">Tanggal</span>
-                    <input type="date" class="form-control" placeholder="Server" aria-label="Server" style="font-size: small; padding: 0; margin-left: 10px;text-align: center;">
+                        <span style="color: black;">Tanggal</span>
+                        <input type="date" id="inputTanggal" class="form-control" placeholder="Server" aria-label="Server" onchange="updateTable()" style="font-size: small; padding: 0; margin-left: 10px;text-align: center;">
                     </div>
                 </li>
                 <li class="position-absolute end-0" style="display: inline-block;">
                     <a href=# style="color: #767979;margin-top:10px;">Cetak Laporan</a>
                 </li>
             </ul>
-            <table class="table border-primary mt-3" style="border-color:black !important">
+            <table class="table border-primary mt-3" id="tableLaporan" style="border-color:black !important">
                 <thead>
                     <tr>
                         <th scope="col">Kategori</th>
                         <th scope="col">Nama Produk</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Promo</th>
+                        <th scope="col">Terjual</th>
                         <th scope="col">Stok</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>a</td>
                         <td>a</td>
                         <td>a</td>
                         <td>a</td>
@@ -71,6 +71,20 @@ check_admin_session();
             </table>
         </div>
     </div>
+
+    <script>
+        function updateTable() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    $('#tableLaporan tbody').html(this.responseText);
+                };
+            };
+
+            xmlhttp.open("GET", "../script/get_laporan_stok.php?date=" + $('#inputTanggal').val(), true);
+            xmlhttp.send();
+        }
+    </script>
 </body>
 
 </html>
