@@ -30,16 +30,16 @@ class Header extends HTMLElement {
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="./admin_beranda.php">Beranda</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'beranda' ? 'active' : ''}" href="${this.getAttribute('logged') == 'false' ? './beranda.php' : './admin_beranda.php'}">Beranda</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="#">Produk</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'produk' ? 'active' : ''}" href="./beranda.php#produk">Produk</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'rundown' ? 'active' : ''}" href="#">Riwayat</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'rundown' ? 'active' : ''}" href="./riwayat.php">Riwayat</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="#">Kontak</a>
+                          <a class="nav-link ${this.getAttribute('active') == 'register' ? 'active' : ''}" href="./beranda.php#kontak">Kontak</a>
                       </li>
                       <li class="nav-item" ${this.getAttribute('logged') == 'false' ? 'style="display: none;"' : ''}>
                           <a class="nav-link" href="./logout.php">Logout</a>

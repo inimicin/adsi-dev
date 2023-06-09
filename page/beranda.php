@@ -1,5 +1,11 @@
 <?php
+session_start();
+
 include("./modal.php");
+
+if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
+  $logStatus = false;
+}
 
 ?>
 
@@ -71,7 +77,7 @@ include("./modal.php");
 
 <body>
 
-  <main-header active="beranda"></main-header>
+  <main-header active="beranda" logged="<?php if(!$logStatus){echo "false";} ?>"></main-header>
   <div class="container-fluid main-body" style="height: 100vh">
     <div class="card" style="
           width: 40%;
@@ -99,7 +105,7 @@ include("./modal.php");
     <div class="container home-image" style="width: 25%; height: 56.25%; position: absolute; right: 15%;"></div>
   </div>
 
-  <div class="" style="padding-top:100px;padding-bottom:20%; padding-left:50px;padding-right:50px;">
+  <div class="" id="produk" style="padding-bottom:20%; padding-left:50px;padding-right:50px;">
     <center>
       <h1 style="font-size: 30pt; padding-bottom: 100px;">
         <strong>Produk </strong>
@@ -138,7 +144,7 @@ include("./modal.php");
     </table>
   </div>
 
-  <div class="" style="padding-bottom:20%;">
+  <div id="kontak" class="" style="padding-bottom:20%;">
     <center>
       <h1 style="font-size: 30pt;">
         <strong>Kontak Kami</strong>
