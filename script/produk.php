@@ -16,6 +16,13 @@ function get_data_produk_by_id($id) {
     return mysqli_fetch_row($sql);
 }
 
+function get_data_produk_by_kategori($kategori) {
+    $query = "SELECT * FROM `dataproduk` WHERE `kategori`='$kategori'";
+    $sql = mysqli_query($GLOBALS['conn'], $query);
+
+    return mysqli_fetch_all($sql);
+}
+
 function save_data_produk($kategori, $nama, $harga, $promo, $stok) {
     $result = mysqli_query($GLOBALS['conn'], "INSERT INTO `dataproduk`(`idProduk`, `namaProduk`, `hargaProduk`, `kategori`, `stok`, `idPromo`, `idPembelian`) VALUES (NULL,'$nama','$harga','$kategori','$stok',$promo,NULL);");
 
