@@ -1,0 +1,38 @@
+.home-image {
+    background-image: url("../res/beranda.png");
+    background-size: cover;
+    /* filter: brightness(70%); */
+  }
+
+.card {
+    border: none;
+}
+
+.btn{
+    color: white!important;
+    background-color: #48509B !important;
+    border-width: 1px;
+    border-radius: 10pt;
+    border-color: #000000;
+
+  }
+  
+.btn:hover{
+    color: black !important;
+    border-color: #000000;
+    background-color: #C7D1EA !important;
+  }
+
+
+input{
+    background-color: transparent !important;
+    border-color: black !important;
+}
+
+.table-riwayat{
+    position: absolute;
+    width: 100pt;
+    top: 53%;
+    transform: translate(0, -50%);
+    left: 17%;
+}

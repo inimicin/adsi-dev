@@ -99,15 +99,15 @@ include("./modal.php");
     <div class="container home-image" style="width: 25%; height: 56.25%; position: absolute; right: 15%;"></div>
   </div>
 
+  <div class="" style="padding-bottom:20%; padding-left:50px;padding-right:50px;">
   <center>
-    <h1 style=" padding-top: 500px; font-size: 30pt; padding-bottom: 150px;">
+    <h1 style="font-size: 30pt; padding-bottom: 100px;">
       <strong>Produk </strong>
     </h1>
   </center>
 
-  <center>
-    <table style="padding-top: 200px;">
-      <tr>
+    <table style=>
+      <tr style="padding-left:10pt;padding-right:10pt;">
         <th></th>
         <th></th>
         <th></th>
@@ -115,28 +115,28 @@ include("./modal.php");
         <th></th>
         <th></th>
       </tr>
-      <tr>
+      <tr style="padding-left:10pt;padding-right:10pt;">
         <td><a href="#" data-bs-toggle="modal" data-bs-target="#myModalPulsa"><img src="../res/pulsa_biasa.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalPulsa"></a> </td>
         <td>Pulsa isi ulang</td>
         <td style="padding-left: 400px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalPaket"><img src="../res/paketdata.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalPaket"></a>
         </td>
         <td>Paket Data</td>
-        <td style="padding-left: 400px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalToklis"><img src="token_listrik.png.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalToklis"></a></td>
+        <td style="padding-left: 400px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalToklis"><img src="../res/token_listrik.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalToklis"></a></td>
         <td>Token Listrik</td>
 
       </tr>
-      <tr>
-        <td style="padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalVoucher"><img src="gamevocer.png.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalVoucher"></a>
+      <tr style="padding-left:10pt;padding-right:10pt;">
+        <td style="padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalVoucher"><img src="../res/gamevocer.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalVoucher"></a>
         </td>
         <td style="padding-top: 150px;">Voucher Game</td>
-        <td style="padding-left: 400px; padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalTelpon"> <img src="telkomsel.png.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalTelpon"></a></td>
+        <td style="padding-left: 400px; padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalTelpon"> <img src="../res/telkomsel.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalTelpon"></a></td>
         <td style="padding-top: 150px;">Telpon telkomsel</td>
-        <td style="padding-left: 400px; padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalEtoll"> <img src="e-toll.png.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalEtoll"></a></td>
+        <td style="padding-left: 400px; padding-top: 150px;"><a href="#" data-bs-toggle="modal" data-bs-target="#myModalEtoll"> <img src="../res/e-toll.png" alt="Gambar 1" width="70" height="70" data-bs-toggle="modal" data-bs-target="#myModalEtoll"></a></td>
         <td style="padding-top: 150px;">E-toll</td>
       </tr>
 
     </table>
-  </center>
+  </div>
 
   
 
