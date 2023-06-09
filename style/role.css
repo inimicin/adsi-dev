@@ -1,0 +1,24 @@
+.home-image {
+    background-image: url("../res/login.png");
+    background-size: cover;
+    /* filter: brightness(70%); */
+  }
+
+.card {
+    border: none;
+}
+
+.btn{
+    color: white!important;
+    background-color: #48509B !important;
+    border-width: 1px;
+    border-radius: 10pt;
+    width: 250pt;
+
+  }
+  
+.btn:hover{
+    color: black !important;
+    border-color: #000000;
+    background-color: #C7D1EA !important;
+  }
