@@ -48,7 +48,7 @@ $allProduk = get_data_produk();
                     <li style="display: inline-block;">
                         <div class="form-group">
                             <label for="inputProduk" style="font-size:10pt">Nama Produk</label>
-                            <select class="form-select" aria-label="Default select example" id='inputProduk' name="inputProduk">
+                            <select class="form-select" aria-label="Default select example" id='inputProduk' name="inputProduk" onchange="updateMaxJumlah()">
                                 <?php
                                 foreach ($allProduk as $produk) {
                                 ?>
@@ -89,28 +89,39 @@ $allProduk = get_data_produk();
                     </tr> -->
                 </tbody>
             </table>
-            <table class="table" style="width:50%;border-color:transparent !important;">
-                <tbody>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <td>a</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Kembali</th>
-                        <td>a</td>
+            <div class="container-fluid w-100 p-0" style="display: flex;justify-content: flex-end;">
+                <table class="table" style="width:40%;border-color:transparent !important;">
+                    <tbody>
+                        <form id="formBayar">
+                            <tr>
+                                <th scope="row">Total</th>
+                                <td id="totalHarga">Rp. 0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Kembali</th>
+                                <td id="totalKembali">Rp. 0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 50%">Bayar</th>
+                                <td> <input type="Number" class="form-control" id="bayar" style="font-size:8pt;width:100%" onchange="getKembali()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
 
-                    </tr>
-                    <tr>
-                        <th scope="row">Bayar</th>
-                        <td> <input type="Number" class="form-control" id="bayar" style="font-size:8pt;width:50%">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                </th>
+                                <td>
+                                    <button class="btn btn-primary" style="font-size:10pt">Bayar</button>
+                                </td>
+                            </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script>
-        var grandTotal = 0;
+        var total = 0;
         const produkList = [];
 
         $('#produkForm').submit(function() {
@@ -120,9 +131,60 @@ $allProduk = get_data_produk();
             showData();
         })
 
+        $('#formBayar').submit(function() {
+            event.preventDefault();
+            produkList.forEach(element => {
+                kurangStok(element[0], element[1]);
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        
+                    };
+                };
+
+                xmlhttp.open("GET", "../script/save_penjualan.php?id=" + element[0] + "&jumlah=" + element[1], true);
+                xmlhttp.send();
+            });
+            location.reload();
+        })
+
+        function kurangStok(id, terjual) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+
+                };
+            };
+
+            xmlhttp.open("GET", "../script/kurang_stok.php?id=" + id + "&terjual=" + terjual, true);
+            xmlhttp.send();
+        }
+
         function deleteData(id) {
             produkList.splice(id, 1);
             showData();
+        }
+
+        function getTotal() {
+            produkList.forEach(element => {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        total = total + parseInt(this.responseText) * element[1];
+                        $('#totalHarga').html(`Rp. ${total}`);
+                        $('#bayar').attr({
+                            'min': total
+                        });
+                    };
+                };
+
+                xmlhttp.open("GET", "../script/get_price.php?id=" + element[0], true);
+                xmlhttp.send();
+            });
+        }
+
+        function getKembali() {
+            $('#totalKembali').html('Rp. ' + (parseInt($('#bayar').val()) - total));
         }
 
         function showData() {
@@ -135,7 +197,7 @@ $allProduk = get_data_produk();
                     <th scope="col" style="border: none;">Aksi</th>
                 </tr>
             `);
-            
+
             produkList.forEach(element => {
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
@@ -147,6 +209,22 @@ $allProduk = get_data_produk();
                 xmlhttp.open("GET", "../script/produk_penjualan_list.php?id=" + element[0] + "&jumlah=" + element[1] + "&index=" + produkList.indexOf(element), true);
                 xmlhttp.send();
             });
+
+            getTotal();
+        }
+
+        function updateMaxJumlah() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    $('#inputJumlah').attr({
+                        'max': this.responseText
+                    });
+                };
+            };
+
+            xmlhttp.open("GET", "../script/get_max_stok.php?id=" + $('#inputProduk option:selected').val(), true);
+            xmlhttp.send();
         }
     </script>
 </body>
