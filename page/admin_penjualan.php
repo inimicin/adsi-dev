@@ -43,31 +43,33 @@ $allProduk = get_data_produk();
     <main-header active=" "></main-header>
     <div class="container-fluid w-100 p-0" style="margin-top: 100px !important;position: absolute;">
         <div class="container mx-auto px-5 mt-1">
-            <ul class="p-0 position-relative">
-                <li style="display: inline-block;">
-                    <div class="form-group">
-                        <label for="inputProduk" style="font-size:10pt">Nama Produk</label>
-                        <select class="form-select" aria-label="Default select example" id='inputProduk' name="inputProduk">
-                            <?php
-                            foreach ($allProduk as $produk) {
-                            ?>
-                                <option value="<?= $produk[0] ?>"><?= $produk[1] ?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                </li>
-                <li style="display: inline-block;">
-                    <div class="form-group">
-                        <label for="inputJumlah" style="font-size:10pt">Jumlah</label>
-                        <input type="Number" class="form-control" id="inputJumlah" style="font-size:8pt">
-                    </div>
-                </li>
-                <li style="display: inline-block;">
-                    <button type="submit" class="btn btn-primary" style="font-size:10pt" onclick="addProduk()">Tambah</button>
-                </li>
-            </ul>
+            <form id="produkForm">
+                <ul class="p-0 position-relative">
+                    <li style="display: inline-block;">
+                        <div class="form-group">
+                            <label for="inputProduk" style="font-size:10pt">Nama Produk</label>
+                            <select class="form-select" aria-label="Default select example" id='inputProduk' name="inputProduk">
+                                <?php
+                                foreach ($allProduk as $produk) {
+                                ?>
+                                    <option value="<?= $produk[0] ?>"><?= $produk[1] ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </li>
+                    <li style="display: inline-block;">
+                        <div class="form-group">
+                            <label for="inputJumlah" style="font-size:10pt">Jumlah</label>
+                            <input type="Number" class="form-control" id="inputJumlah" style="font-size:8pt" min="1" required>
+                        </div>
+                    </li>
+                    <li style="display: inline-block;">
+                        <button type="submit" class="btn btn-primary" style="font-size:10pt">Tambah</button>
+                    </li>
+                </ul>
+            </form>
             <table class="table table-bordered" id="tablePenjualan" style="border-color:black">
                 <thead>
                     <tr style="border: 1px solid;">
@@ -75,15 +77,16 @@ $allProduk = get_data_produk();
                         <th scope="col" style="border:none;">Jumlah</th>
                         <th scope="col" style="border:none;">Promo</th>
                         <th scope="col" style="border:none;">Harga</th>
+                        <th scope="col" style="border: none;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border: 1px solid;">
+                    <!-- <tr style="border: 1px solid;">
                         <td scope="col" style="border:none;">a</td>
                         <td scope="col" style="border:none;">a</td>
                         <td scope="col" style="border:none;">a</td>
                         <td scope="col" style="border:none;">a</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <table class="table" style="width:50%;border-color:transparent !important;">
@@ -107,33 +110,43 @@ $allProduk = get_data_produk();
         </div>
     </div>
     <script>
-        // $('#inputProduk').editableSelect();
         var grandTotal = 0;
         const produkList = [];
 
-        function createCookie(name, value, days) {
-            var expires;
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toGMTString();
-            } else {
-                expires = "";
-            }
-            document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+        $('#produkForm').submit(function() {
+            event.preventDefault();
+            produkList.push([$('#inputProduk option:selected').val(), $('#inputJumlah').val()]);
+            console.log(produkList);
+            showData();
+        })
+
+        function deleteData(id) {
+            produkList.splice(id, 1);
+            showData();
         }
 
-        function addProduk() {
-            createCookie('id', $('#inputProduk option:selected'), "1");
-            const namaProduk = '<?php echo get_data_produk_by_id($_COOKIE['id'])[1]; ?>';
-            $('#tablePenjualan tr:last').after(`
+        function showData() {
+            $('#tablePenjualan thead').html(`
                 <tr style="border: 1px solid;">
-                    <td scope="col" style="border:none;">${namaProduk}</td>
-                    <td scope="col" style="border:none;">a</td>
-                    <td scope="col" style="border:none;">a</td>
-                    <td scope="col" style="border:none;">a</td>
+                    <th scope="col" style="border:none;">Nama Produk</th>
+                    <th scope="col" style="border:none;">Jumlah</th>
+                    <th scope="col" style="border:none;">Promo</th>
+                    <th scope="col" style="border:none;">Harga</th>
+                    <th scope="col" style="border: none;">Aksi</th>
                 </tr>
             `);
+            
+            produkList.forEach(element => {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        $('#tablePenjualan tr:last').after(this.responseText);
+                    };
+                };
+
+                xmlhttp.open("GET", "../script/produk_penjualan_list.php?id=" + element[0] + "&jumlah=" + element[1] + "&index=" + produkList.indexOf(element), true);
+                xmlhttp.send();
+            });
         }
     </script>
 </body>
