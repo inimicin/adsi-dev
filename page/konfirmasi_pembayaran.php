@@ -2,7 +2,6 @@
 
 include('../script/produk.php');
 include('../script/promo.php');
-include('../script/pelanggan.php');
 include('../script/pembelian.php');
 
 $id = $_POST['produk'];

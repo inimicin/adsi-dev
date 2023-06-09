@@ -2,23 +2,20 @@
 
 include('koneksi.php');
 include('histori.php');
+include('pelanggan.php');
 
-// function get_data_penjualan_by_date($date) {
-//   $rows = get_data_histori_by_tanggal($date);
-//   $dataPenjualan = array();
+function get_data_pembelian_by_no_hp($no_hp) {
+  $idPelanggan = get_data_pelanggan_by_no_hp($no_hp);
 
-//   foreach ($rows as $data) {
-//     $idHistori = $data[0];
-//     $query = "SELECT * FROM `datapenjualan` WHERE `idHistori`=$idHistori;";
-//     $sql = mysqli_query($GLOBALS['conn'], $query);
+  if($idPelanggan === NULL) {
+    return NULL;
+  }
 
-//     foreach (mysqli_fetch_all($sql) as $penjualan) {
-//       array_push($dataPenjualan, $penjualan);
-//     }
-//   }
+  $query = "SELECT * FROM `datapembelian` WHERE `idPelanggan`=$idPelanggan[0];";
+  $sql = mysqli_query($GLOBALS['conn'], $query);
 
-//   return $dataPenjualan;
-// }
+  return mysqli_fetch_all($sql);
+}
 
 // function get_unique_id_produk_by_date($date) {
 //   $rows = get_data_histori_by_tanggal($date);

@@ -16,6 +16,14 @@ function get_data_histori_by_tanggal($tanggal) {
   return mysqli_fetch_all($sql);
 }
 
+function get_data_histori_by_id($id) {
+  $query = "SELECT * FROM `historitransaksi` WHERE `idHistori`='$id';";
+  $sql = mysqli_query($GLOBALS['conn'], $query);
+
+  return mysqli_fetch_row($sql);
+}
+
+
 function save_data_histori() {
   $tanggal = date("Y-m-d");
   $waktu = date("H:i:s");
