@@ -30,7 +30,7 @@
 
 <body>
 
-    <main-header active="beranda"></main-header>
+    <main-header logged='false'></main-header>
     <div class="container-fluid main-body" style="height: 100vh">
         <div class="card" style="
           width: 40%;
@@ -46,7 +46,7 @@
                 </h1>
                 <div>
                     <a href="./beranda.php"><button type="button" class="btn btn-primary" style="position:relative;margin-top:20pt;">Pelanggan</button></a>
-                    <a href="./admin_beranda.php"><button type="button" class="btn btn-primary" style="position:relative;margin-top:20pt">Administrator</button></a>
+                    <a href="./admin_login.php"><button type="button" class="btn btn-primary" style="position:relative;margin-top:20pt">Administrator</button></a>
                 </div>
             </div>
         </div>
