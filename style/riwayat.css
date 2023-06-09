@@ -32,7 +32,6 @@ input{
 .table-riwayat{
     position: absolute;
     width: 100pt;
-    top: 53%;
-    transform: translate(0, -50%);
+    top: 300px;
     left: 17%;
 }
