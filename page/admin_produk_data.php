@@ -12,8 +12,8 @@ check_admin_session();
 <style>
     body {
         min-height: 100vh;
-        background: #ffffff;  
-        background-image: radial-gradient( circle farthest-corner at 0.1% 0.1%,  rgb(255, 215, 215) 0%, rgb(255, 255, 255) 99.9% );
+        background: #ffffff;
+        background-image: radial-gradient(circle farthest-corner at 0.1% 0.1%, rgb(255, 215, 215) 0%, rgb(255, 255, 255) 99.9%);
         /* background-image: linear-gradient( to left, rgb(177, 213, 244)0.2%, rgb(255,255,255)90%); */
     }
 </style>
@@ -71,7 +71,7 @@ check_admin_session();
                             <td><?= $result[4] ?></td>
                             <td>
                                 <a href="./admin_produk_edit.php?id=<?= $result[0] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="./admin_produk_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></a>
+                                <a style="margin-left: 10px;color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));" onclick="confirmHapus('<?= $result[0] ?>')"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php
@@ -81,6 +81,13 @@ check_admin_session();
             </table>
         </div>
     </div>
+    <script>
+        function confirmHapus(id) {
+            if (window.confirm('Yakin menghapus data?')) {
+                location.href = 'admin_produk_delete.php?id=' + id;
+            }
+        }
+    </script>
 </body>
 
 </html>

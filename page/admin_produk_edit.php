@@ -11,7 +11,16 @@ if (isset($_POST['submit'])) {
     $status = update_data_produk($_GET['id'], $_POST['kategori'], $_POST['nama_produk'], $_POST['harga_produk'], $_POST['promo'], $_POST['stok']);
 
     if ($status) {
-        header('location: ./admin_produk_data.php');
+        echo "
+        <script>
+            alert('Sukses Menyimpan Data');
+            window.location = './admin_produk_data.php';
+        </script>";
+    } else {
+        echo "
+        <script>
+            alert('Gagal Menyimpan Data');
+        </script>";
     }
 }
 

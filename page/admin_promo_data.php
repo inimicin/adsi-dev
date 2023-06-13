@@ -54,7 +54,7 @@ check_admin_session();
                             <td><?= $result[2] ?>%</td>
                             <td>
                                 <a href="./admin_promo_edit.php?id=<?= $result[0] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="./admin_promo_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></a>
+                                <a style="margin-left: 10px;color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));" onclick="confirmHapus(<?= $result[0] ?>)"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php
@@ -64,6 +64,13 @@ check_admin_session();
             </table>
         </div>
     </div>
+    <script>
+        function confirmHapus(id) {
+            if (window.confirm('Yakin menghapus data?')) {
+                location.href="./admin_promo_delete.php?id=" + id;
+            }
+        }
+    </script>
 </body>
 
 </html>
