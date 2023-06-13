@@ -9,7 +9,16 @@ if (isset($_POST['submit'])) {
     $status = save_data_promo($_POST['nama_promo'], $_POST['diskon']);
 
     if ($status) {
-        header('location: ./admin_promo_data.php');
+        echo "
+        <script>
+            alert('Sukses Menambahkan Data');
+            window.location = './admin_promo_data.php';
+        </script>";
+    } else {
+        echo "
+        <script>
+            alert('Gagal Menambahkan Data');
+        </script>";
     }
 }
 

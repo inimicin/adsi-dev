@@ -18,7 +18,18 @@ if(isset($_POST['submit'])){
   $pelanggan = get_data_pelanggan_by_no_hp($no_hp);
   $histori = save_data_histori();
 
-  save_data_pembelian($_POST['payment'], $produk[0], $histori[0], $pelanggan[0]);
+  $status = save_data_pembelian($_POST['payment'], $produk[0], $histori[0], $pelanggan[0]);
+  if ($status) {
+    echo "
+    <script>
+        alert('Sukses Membuat Pesanan');
+    </script>";
+} else {
+    echo "
+    <script>
+        alert('Gagal Membuat Pesanan');
+    </script>";
+}
 }
 
 ?>

@@ -138,13 +138,14 @@ $allProduk = get_data_produk();
                 var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        
+                        $('body div:last').after(this.response);
                     };
                 };
 
                 xmlhttp.open("GET", "../script/save_penjualan.php?id=" + element[0] + "&jumlah=" + element[1], true);
                 xmlhttp.send();
             });
+            alert('Sukses Melakukan Pembelian');
             location.reload();
         })
 

@@ -11,7 +11,16 @@ if (isset($_POST['submit'])) {
     $status = update_data_promo($_GET['id'], $_POST['nama_promo'], $_POST['diskon']);
 
     if ($status) {
-        header('location: ./admin_promo_data.php');
+        echo "
+        <script>
+            alert('Sukses Menyimpan Data');
+            window.location = './admin_promo_data.php';
+        </script>";
+    } else {
+        echo "
+        <script>
+            alert('Gagal Menyimpan Data');
+        </script>";
     }
 }
 
