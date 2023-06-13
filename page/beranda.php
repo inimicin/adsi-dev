@@ -95,7 +95,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
           Dapatkan pulsa dan kuota internet anda
           tanpa ribet bersama gerai digital star cell
         </p>
-        <a href="#" class="btn btn-primary btn-beli">
+        <a href="#produk" class="btn btn-primary btn-beli">
           <img src="../res/cart_icon.png" width="25">
           <span style="margin-left: 10px;">Beli Sekarang</span>
         </a>

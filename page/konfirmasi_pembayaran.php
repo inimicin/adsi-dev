@@ -8,10 +8,10 @@ $id = $_POST['produk'];
 
 $produk = get_data_produk_by_id($id);
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
   $no_hp = $_POST['noHp'];
 
-  if(get_data_pelanggan_by_no_hp($no_hp) === NULL){
+  if (get_data_pelanggan_by_no_hp($no_hp) === NULL) {
     $result = save_data_pelanggan($no_hp);
   }
 
@@ -64,9 +64,15 @@ if(isset($_POST['submit'])){
       margin-left: 270px;
     }
   </style>
+  <script src="../script/header.js"></script>
+  <link rel="stylesheet" href="../style/general.css">
+  <link rel="stylesheet" href="../style/nav.css">
+  <link rel="stylesheet" href="../style/beranda.css" />
+  <link rel="stylesheet" href="../style/font.css" />
 </head>
 
 <body>
+  <main-header logged="false"></main-header>
   <div class="backgorund"></div>
   <div class="container">
     <div class="row">
@@ -90,7 +96,7 @@ if(isset($_POST['submit'])){
             <p style="font-weight: bold;">Harga</p>
           </div>
           <div class="col-5">
-            <p style="font-weight: bold;">: Rp. <?= $produk[2]*((100-get_data_promo_by_id($produk[5])[2])/100) ?></p>
+            <p style="font-weight: bold;">: Rp. <?= $produk[2] * ((100 - get_data_promo_by_id($produk[5])[2]) / 100) ?></p>
           </div>
         </div>
       </div>
@@ -102,7 +108,17 @@ if(isset($_POST['submit'])){
       </div>
     </div>
   </div>
+  <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
 
+      };
+    };
+
+    xmlhttp.open("GET", "../script/kurang_stok.php?id=<?= $id ?>&terjual=1", true);
+    xmlhttp.send();
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 
