@@ -1,0 +1,8 @@
+.btn-primary {
+    background-color: #48509B !important;
+    border-color: black;
+    border-width: 1px !important;
+    padding: 2px;
+    width: 100px;
+    margin-top: 5px;
+}

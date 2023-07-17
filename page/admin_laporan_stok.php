@@ -46,9 +46,9 @@ check_admin_session();
                         <input type="date" id="inputTanggal" class="form-control" placeholder="Server" aria-label="Server" onchange="updateTable()" style="font-size: small; padding: 0; margin-left: 10px;text-align: center;">
                     </div>
                 </li>
-                <li class="position-absolute end-0" style="display: inline-block;">
+                <!-- <li class="position-absolute end-0" style="display: inline-block;">
                     <a href=# style="color: #767979;margin-top:10px;">Cetak Laporan</a>
-                </li>
+                </li> -->
             </ul>
             <table class="table border-primary mt-3" id="tableLaporan" style="border-color:black !important">
                 <thead>
@@ -61,10 +61,10 @@ check_admin_session();
                 </thead>
                 <tbody>
                     <tr>
-                        <td>a</td>
-                        <td>a</td>
-                        <td>a</td>
-                        <td>a</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
                     </tr>
 
                 </tbody>

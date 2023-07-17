@@ -30,7 +30,7 @@
 
 <body>
 
-    <main-header active="beranda" logged='false'></main-header>
+    <main-header active="Riwayat" logged='false'></main-header>
     <div class="container-fluid main-body" style="height: 100vh">
         <div class="card" style="
           width: 40%;
